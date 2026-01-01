@@ -18,10 +18,14 @@ public enum EdfaPgSaleVirtualTransactionResult: Codable {
     /// Success result.
     case success(EdfaPgSaleVirtualTransaction)
     
-    /// Actual value: *EdfaPgGetTransactionStatusSuccess*
+    /// Decline result.
+    case decline(EdfaPgSaleVirtualTransactionDecline)
+    
+    /// Actual value: *EdfaPgSaleVirtualTransaction* or *EdfaPgSaleVirtualTransactionDecline*
     public var result: EdfaPgResultProtocol {
         switch self {
         case .success(let result): return result
+        case .decline(let result): return result
         }
     }
     
