@@ -329,6 +329,8 @@ fileprivate func startPurchaseApm(payment:PKPayment, completion:@escaping ((Bool
                         }else{
                             completion(false, result.json())
                         }
+                    case .decline(let result):
+                        completion(false, result.json())
                     }
                     
                 case .error(let error):
