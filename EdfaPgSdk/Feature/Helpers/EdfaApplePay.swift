@@ -398,7 +398,7 @@ fileprivate func startPurchaseApm(payment:PKPayment, completion:@escaping ((Bool
                 extras: _extras
                 
             ) { response in
-                log(label: "startPurchaseApm.response", object: "Received response from virtual sale adapter")
+                log(label: "startPurchaseApm.response", object: response)
                 switch response{
                     
                 case .result(let resp):
