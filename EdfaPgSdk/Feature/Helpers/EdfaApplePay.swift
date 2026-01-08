@@ -371,6 +371,8 @@ fileprivate func startPurchaseApm(payment:PKPayment, completion:@escaping ((Bool
     let method = payment.token.paymentMethod
     
     log(label: "startPurchaseApm", object: "Serializing payment data")
+    // log token as json
+    log(label: "startPurchaseApm.token", object: token)
     if let paymentDataJSON = try? JSONSerialization.jsonObject(with: token.paymentData) as? [String:Any]{
         log(label: "startPurchaseApm", object: "Payment data serialized successfully")
         let paymentJSON:[String : Any] = [
