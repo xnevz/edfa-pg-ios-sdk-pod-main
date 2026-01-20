@@ -415,6 +415,7 @@ fileprivate func startPurchaseApm(payment:PKPayment, completion:@escaping ((Bool
                         }
                     case .decline(let result):
                         log(label: "startPurchaseApm.decline", object: "Transaction declined")
+                        log(label: "startPurchaseApm.decline (JSON)", object: result.json())
                         completion(false, result.json())
                     }
                     
